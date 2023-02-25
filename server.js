@@ -1,7 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const passport = require('./lib/passportConfig')
-const session =require('express-session')
+const session = require('express-session')
 
 
 const port = 3000
