@@ -12,7 +12,7 @@ exports.auth_signin_get = (req, res) => {
     res.render('auth/signin')
 }
 
-exports.auth_Signup_post = (req, res) => {
+exports.auth_signup_post = (req, res) => {
     let user = new User(req.body);
     let hash = bcrypt.hashSync(req.body.password, 10)//number to encrypt the min num 8
     // this will change user pass to hashed one 
