@@ -13,8 +13,10 @@ app.set('view engine', 'ejs')
 // Import and Mount Routes here
 
 const indexRoute = require('./routes/index')
+const comicRoute = require('./routes/comics')
 
 app.use('/', indexRoute)
+app.use('/', comicRoute)
 
 // Start Server and output message on terminal 
 
