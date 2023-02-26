@@ -2,6 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const passport = require('./lib/passportConfig')
 const session = require('express-session')
+const config = require('./config/database')
 
 
 const port = 3000
@@ -35,23 +36,12 @@ app.use('/', indexRoute)
 app.use('/', comicRoute)
 app.use('/',authRoute)
 
-// app.listen(PORT,() => {
-//     console.log(`this app running on port ${PORT}`)
-// })
-
-mongoose.set('strictQuery',false)
-
-//mongoose connection
-mongoose.connect('mongodb+srv://zahidala:c4nQob3fZPWvAeKs@cluster0.moqoxtr.mongodb.net/comicapp?retryWrites=true&w=majority',{
-    useNewUrlParser: true,
-    useUnifiedTopology : true
-},
-() => {
-    console.log('MongoDB connected !');
-})
-
 // Start Server and output message on terminal 
 
 app.listen(port, function(){
     console.log(`Comics App running on port ${port}`)
 })
+
+// Connect to MongoDB
+
+config.run()
