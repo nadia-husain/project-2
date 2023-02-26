@@ -8,6 +8,7 @@ const comicSchema = mongoose.Schema({
     reviews: String,
     // Author
     completed: Boolean
+    // Reviews
 },
 {
     timestamps: true
