@@ -4,7 +4,6 @@ const passport = require('./lib/passportConfig')
 const session = require('express-session')
 const config = require('./config/database')
 
-
 const port = 3000
 const app = express()
 
