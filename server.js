@@ -14,6 +14,10 @@ const expressLayouts = require('express-ejs-layouts')
 app.use(expressLayouts)
 app.set('view engine', 'ejs')
 
+// using app.use to serve up static CSS files in public/assets/ folder when /public link is called in ejs files
+// app.use("/route", express.static("foldername"));
+app.use('/public', express.static('public'))
+
 
 //MiddleWare
 app.use(session({
