@@ -20,7 +20,7 @@ app.use(session({
     secret: 'supersecuresecret!',
     saveUninitialized: true,
     resave: false,
-    cookie: {maxAge: 604800} // a week of seconds
+    cookie: { maxAge: 604800 } // a week of seconds
 }))
 
 app.use(passport.initialize())
@@ -34,11 +34,11 @@ const authRoute = require('./routes/auth')
 
 app.use('/', indexRoute)
 app.use('/', comicRoute)
-app.use('/',authRoute)
+app.use('/', authRoute)
 
 // Start Server and output message on terminal 
 
-app.listen(port, function(){
+app.listen(port, function () {
     console.log(`Comics App running on port ${port}`)
 })
 
