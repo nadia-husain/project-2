@@ -5,10 +5,9 @@ const comicSchema = mongoose.Schema({
     datePublished: String,
     noEpisodes: Number,
     description: String,
-    reviews: String,
+    // reviews: String,
     // Author
     completed: Boolean
-    // Reviews
 },
 {
     timestamps: true
