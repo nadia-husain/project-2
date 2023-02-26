@@ -35,10 +35,12 @@ app.use(passport.session())
 const indexRoute = require('./routes/index')
 const comicRoute = require('./routes/comics')
 const authRoute = require('./routes/auth')
+const profRoute = require('./routes/profile')
 
 app.use('/', indexRoute)
 app.use('/', comicRoute)
 app.use('/', authRoute)
+app.use('/', profRoute)
 
 // Start Server and output message on terminal 
 

@@ -2,10 +2,10 @@ const mongoose =require('mongoose')
 const bcrypt = require('bcrypt')
 
 const UserSchema = mongoose.Schema({
-    name : {type: String , require:true},
-    emailAddress: {type: String , require:true},
-    password : {type: String , require:true},
-    favourites:[],
+    name: {type: String , require: true},
+    emailAddress: {type: String , require: true},
+    password : {type: String , require: true},
+    // favourites:[],
 },
 {
     timestamps : true
