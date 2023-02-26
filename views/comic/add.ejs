@@ -1,0 +1,55 @@
+<h1>Add Comic</h1>
+<form action="/comic/add" method="post">
+
+<div>
+    <label>Title</label>
+    <input name="title" type="text" />
+</div>
+
+<div>
+    <label>Genre</label>
+    <input name="genre" type="text" />
+</div>
+
+<div>
+    <label>Date Published</label>
+    <input name="datePublished" type="date">
+</div>
+
+<div>
+    <label>Number Of Episodes</label>
+    <input name="noEpisodes" type="number" />
+</div>
+
+<div>
+    <label>Description</label>
+    <input name="description" type="text" />
+</div>
+
+<div>
+    <label>Completed</label>
+    <select name="completed">
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+      </select>
+</div>
+
+<!-- 
+<div>
+    <label>Reviews</label>
+    <input name="reviews" type="text" />
+</div> -->
+
+
+<!-- <div>
+    <label>Author</label>
+    <select name="author" multiple="multiple">
+       </% authors.forEach(function(author){ %>
+            <option value="</%= author._id %>"></%= author.name %> </option>
+        </% }) %>
+    </select>
+</div> -->
+
+    <button type="submit">Add Comic</button>
+
+</form>
