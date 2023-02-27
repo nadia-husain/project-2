@@ -1,10 +1,10 @@
 const mongoose = require('mongoose')
 const comicSchema = mongoose.Schema({
     title: String,
-    user: [{
+    user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User' // the User model
-    }],
+    },
     genre: String,
     datePublished: String,
     noEpisodes: Number,
