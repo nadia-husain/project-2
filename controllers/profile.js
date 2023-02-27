@@ -35,3 +35,29 @@ exports.profile_update_post = function(req, res) {
         console.log(err)
     })
 }
+
+//change password - GET
+exports.profile_changePass_get = (req, res) => {
+    User.findByIdAndUpdate(req.user._id)
+
+        .then(users => {
+            res.render('/profile/edit', { users })
+        })
+        .catch(err => {
+            console.log(err)
+        })
+}
+let hashedPass
+
+//change password - Post
+exports.Profile_changePass_post = (req, res) => {
+    hashedPass = bcrypt.hashSync(req.body.Password, 8)
+    User.findByIdAndUpdate(req.body.id, { password: hashedPass })
+
+        .then(() => {
+            res.redirect('/profile/edit')
+        })
+        .catch(err => {
+            console.log(err)
+        })
+}
