@@ -12,3 +12,4 @@ exports.comic_create_post = function (req, res) {
      console.log(req.body)
      let comic = new Comic(req.body)
 }
+
