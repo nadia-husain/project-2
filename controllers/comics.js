@@ -23,7 +23,7 @@ exports.comic_create_post = function (req, res) {
 }
 
 exports.comic_delete_get = (req, res) => {
-    comic.findByIdAndDelete(req.query.id)
+    Comic.findByIdAndDelete(req.query.id)
 
         .then(() => {
             // you can use key : value
