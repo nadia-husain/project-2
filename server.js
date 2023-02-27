@@ -50,3 +50,8 @@ app.listen(port, function () {
 // Connect to MongoDB
 
 config.run()
+
+
+app.get('/a',(req,res)=> {
+    res.render("comic/index")
+ })
