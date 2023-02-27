@@ -1,4 +1,4 @@
-const mongoose =require('mongoose')
+const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 
 const UserSchema = mongoose.Schema({
@@ -13,13 +13,20 @@ const UserSchema = mongoose.Schema({
 {
     timestamps : true
 })
-    
+
+UserSchema.virtual('numComics').get(function() {
+    return this.comics.length;
+});
+
 UserSchema.methods.verifyPassword = function(password){
     console.log('Verifying:', password)
     console.log(this.password)
     return bcrypt.compareSync(password, this.password)
 }
-    
+
+UserSchema.set('toObject', { virtuals: true });
+UserSchema.set('toJSON', { virtuals: true });
+
 const User = mongoose.model('User',UserSchema)
 
 module.exports = User;
