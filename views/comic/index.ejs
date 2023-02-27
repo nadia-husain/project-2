@@ -4,6 +4,7 @@
     <tr>
         <th>Title</th>
         <th>Genre</th>
+        <th>Author</th>
         <th>Date Published</th>
         <th>No Episodes</th>
         <th>Completed</th>
@@ -11,11 +12,11 @@
         <th>Delete</th>
     </tr>
 
-<% comics.forEach(function(Comic){ %> 
+<% comics.forEach(function(comic){ %> 
     <tr>
-        <!-- <td><a href="/comic/detail?id=<%= comic._id %>"><%= comic.title %> </a></td> -->
         <td><%= comic.title%></td>
         <td><%= comic.genre %></td>
+        <td><%= comic.user.length > 0 ? comic.user[0].name : 'N/A' %></td>
         <td><%= comic.datePublished %></td>
         <td><%= comic.noEpisodes %></td>
         <td><%= comic.completed %></td>
