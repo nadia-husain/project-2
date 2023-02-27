@@ -1,1 +1,26 @@
 <h1>Comic</h1>
+
+<table class="table table-striped">
+    <tr>
+        <th>Title</th>
+        <th>Genre</th>
+        <th>Date Published</th>
+        <th>No Episodes</th>
+        <th>Completed</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+
+<% comics.forEach(function(Comic){ %> 
+    <tr>
+        <!-- <td><a href="/comic/detail?id=<%= comic._id %>"><%= comic.title %> </a></td> -->
+        <td><%= comic.title%></td>
+        <td><%= comic.genre %></td>
+        <td><%= comic.datePublished %></td>
+        <td><%= comic.noEpisodes %></td>
+        <td><%= comic.completed %></td>
+        <td><a href="/comic/edit?id=<%= comic._id %>">Edit</a></td>
+        <td><a href="/comic/delete?id=<%= comic._id %>">Delete</a></td>
+    </tr>
+<% }) %>
+</table>
