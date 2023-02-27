@@ -5,7 +5,10 @@ const UserSchema = mongoose.Schema({
     name: {type: String , require: true},
     emailAddress: {type: String , require: true},
     password : {type: String , require: true},
-    // favourites:[],
+    comics: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Comic' // the Comic model
+    }],
 },
 {
     timestamps : true
