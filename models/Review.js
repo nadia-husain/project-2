@@ -10,9 +10,9 @@ const reviewSchema = mongoose.Schema({
     }],
     review: String,
 },
-{
-    timestamps: true
-})
+    {
+        timestamps: true
+    })
 
 const Review = mongoose.model('Review', reviewSchema)
 

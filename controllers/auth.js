@@ -9,8 +9,8 @@ exports.auth_signup_get = (req, res) => {
 }
 
 exports.auth_signin_get = (req, res) => {
-  // console.log("this is user id: ", req.session.User._id)
-   
+    // console.log("this is user id: ", req.session.User._id)
+
     res.render('auth/signin')
 }
 
@@ -22,7 +22,7 @@ exports.auth_signup_post = (req, res) => {
     //save user in the DB
     user.save()
         .then(() => {
-           // console.log('User ID:', req.user._id);
+            // console.log('User ID:', req.user._id);
             res.redirect('/auth/signin')
         })
         .catch((err) => {
@@ -33,14 +33,14 @@ exports.auth_signup_post = (req, res) => {
 
 exports.auth_signin_post = passport.authenticate('local', {
     // to tedirect user to any where he want
-    successRedirect: '/', 
+    successRedirect: '/',
     failureRedirect: '/auth/signin'
 })
 
 
-exports.auth_signout_get = (req,res) => {
-    req.logout(function(err){
-        if(err){
+exports.auth_signout_get = (req, res) => {
+    req.logout(function (err) {
+        if (err) {
             return next(err)
         }
         res.redirect('/auth/signin')

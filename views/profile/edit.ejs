@@ -2,19 +2,19 @@
 
 <form action="/profile/edit" method="POST">
 
-<div>
-    <label>Name: </label>
-    <input name="name" type="text" value="<%= user.name %>"/>
-</div>
-<div>
-    <label>Email Address: </label>
-    <input name="emailAddress: " type="text" value="<%= user.emailAddress %>"/>
-</div>
+    <div>
+        <label>Name: </label>
+        <input name="name" type="text" value="<%= user.name %>" />
+    </div>
+    <div>
+        <label>Email Address: </label>
+        <input name="emailAddress: " type="text" value="<%= user.emailAddress %>" />
+    </div>
 
-<div>
-    <label>Password</label>
-    <input name="password" type="text" value="<%= user.password %>"/>
-</div>
+    <div>
+        <label>Password</label>
+        <input name="password" type="text" value="<%= user.password %>" />
+    </div>
 
     <input type="hidden" value="<%=user._id%>" name="id">
     <button type="submit">Edit profile</button>
