@@ -9,7 +9,11 @@ const comicSchema = mongoose.Schema({
     datePublished: String,
     noEpisodes: Number,
     description: String,
-    completed: Boolean
+    completed: Boolean,
+    reviews: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Review'
+    }]
 },
 {
     timestamps: true

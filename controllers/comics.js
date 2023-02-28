@@ -1,5 +1,6 @@
 const Comic = require('../models/Comic')
 const User = require('../models/User')
+const Review = require('../models/Review')
 
 // Display comic create form on GET
 exports.comic_create_get = function (req, res) {
@@ -118,7 +119,30 @@ exports.comic_update_post = function(req, res) {
     })
 }
 
+// HTTP Create Review for specific comic in all page - POST
 
+exports.review_create_post = function(req, res) {
+    console.log(req.body)
+    let review = new Review (req.body)
+    review.save()
+      .then(function () {
+        res.redirect('/comic/all')
+      })
+      .catch(function (err) {
+        console.log(err)
+        res.send('An error occurred please try again later')
+      })
+}
+
+exports.review_detail_get = (req, res) => {
+    Review.findById(req.review._id)
+    .then(reviews => {
+        res.render('comic/detail', {reviews})
+    })
+    .catch((err) => {
+        console.log(err)
+    })
+}
 
 
 
