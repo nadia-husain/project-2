@@ -102,7 +102,7 @@ exports.comic_delete_get = (req, res) => {
 
 // HTTP Update GET - Comic
 exports.comic_update_get = function (req, res) {
-    Comic.findById(req.comic._id)
+    Comic.findById(req.query.id)
         .then(function (comic) {
             res.render('comic/edit', { comic })
         })

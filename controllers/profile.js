@@ -1,7 +1,7 @@
 const Profile = require('../models/User')
+const bcrypt = require('bcrypt')
 
 exports.profile_index_get = function (req, res) {
-    //res.render('profile/index')
     Profile.findById(req.user._id)
         .then(function (user) {
             res.render('profile/index', { user })
@@ -11,9 +11,10 @@ exports.profile_index_get = function (req, res) {
             res.send('something went wrong, please try again later.')
         })
 }
+
 // HTTP Update GET - profile
 exports.profile_update_get = function (req, res) {
-    Profile.findById(req.user._id)
+    Profile.findById(req.session.passport.user)
         .then(function (user) {
             res.render('profile/edit', { user })
         })
@@ -24,9 +25,9 @@ exports.profile_update_get = function (req, res) {
 
 // HTTP Update POST - profile
 exports.profile_update_post = function (req, res) {
-    Profile.findByIdAndUpdate(req.user._id, req.user)
+    Profile.findByIdAndUpdate(req.session.passport.user, req.body)
         .then(function () {
-            console.log(req.user)
+            console.log('meowww', req.session.passport.user)
             res.redirect('/profile/index')
         })
         .catch(function (err) {
@@ -36,22 +37,19 @@ exports.profile_update_post = function (req, res) {
 
 //change password - GET
 exports.profile_changePass_get = (req, res) => {
-    Profile.findByIdAndUpdate(req.user._id)
-
+    Profile.findById(req.user._id)
         .then(users => {
-            res.render('/profile/edit', { users })
+            res.render('profile/edit', { users })
         })
         .catch(err => {
             console.log(err)
         })
 }
-let hashedPass
 
 //change password - Post
-exports.Profile_changePass_post = (req, res) => {
-    hashedPass = bcrypt.hashSync(req.body.Password, 8)
-    Profile.findByIdAndUpdate(req.body.id, { password: hashedPass })
-
+exports.profile_changePass_post = (req, res) => {
+    const hashedPass = bcrypt.hashSync(req.body.Password, 8)
+    Profile.findByIdAndUpdate(req.body.UserId, { password: hashedPass })
         .then(() => {
             res.redirect('/profile/edit')
         })
@@ -59,3 +57,4 @@ exports.Profile_changePass_post = (req, res) => {
             console.log(err)
         })
 }
+
