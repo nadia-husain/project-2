@@ -11,5 +11,7 @@ router.get('/comic/index', comicController.comic_index_get)
 router.get('/comic/add', comicController.comic_create_get)
 router.post('/comic/add', comicController.comic_create_post)
 router.get('/comic/delete',comicController.comic_delete_get)
+router.get('/comic/edit', comicController.comic_update_get)
+router.post('/comic/edit', comicController.comic_update_post)
 
 module.exports = router

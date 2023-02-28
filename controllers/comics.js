@@ -70,6 +70,29 @@ exports.comic_delete_get = (req, res) => {
         })
 }
 
+// HTTP Update GET - Comic
+exports.comic_update_get = function(req, res) {
+    Comic.findById(req.comic._id)
+    .then(function(comic){
+        res.render('comic/edit', {comic})
+    })
+    .catch(function(err){
+        console.log(err)
+    })
+}
+
+// HTTP Update POST - Comic
+
+exports.comic_update_post = function(req, res) {
+    Comic.findByIdAndUpdate(req.comic._id, req.comic)
+    .then(function(){
+        console.log(req.comic)
+        res.redirect('/comic/index')
+    })
+    .catch(function(err){
+        console.log(err)
+    })
+}
 
 
 
