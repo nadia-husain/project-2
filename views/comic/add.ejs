@@ -1,5 +1,5 @@
 <h1>Add Comic</h1>
-<form action="/comic/add" method="post">
+<form action="/comic/add" method="post" enctype="multipart/form-data">
 
 <div>
     <label>Title</label>
@@ -34,6 +34,11 @@
       </select>
 </div>
 
-    <button type="submit">Add Comic</button>
+<div>
+    <label for="img">Select image:</label>
+    <input type="file" id="file" name="image">
+  </div>
+
+    <input type="submit" name="Add">
 
 </form>

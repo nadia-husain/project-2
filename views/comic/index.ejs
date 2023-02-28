@@ -8,6 +8,7 @@
         <th>Date Published</th>
         <th>No Episodes</th>
         <th>Completed</th>
+        <th>image</th>
         <th>Edit</th>
         <th>Delete</th>
     </tr>
@@ -20,6 +21,7 @@
         <td><%= comic.datePublished %></td>
         <td><%= comic.noEpisodes %></td>
         <td><%= comic.completed %></td>
+        <td> <img src="uploads/<%=comic.image%>" width="250" height="220px"></td>
         <td><a href="/comic/edit?id=<%= comic._id %>">Edit</a></td>
         <td><a href="/comic/delete?id=<%= comic._id %>">Delete</a></td>
     </tr>
