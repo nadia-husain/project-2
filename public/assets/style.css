@@ -1,8 +1,15 @@
+body{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 
+div{
+padding-bottom: 10px;
+font-size: large;
+}
 nav {
   width: 319px;
   display: table;
-  margin:  auto;
+  margin: auto;
 }
 
 nav a {
@@ -13,7 +20,7 @@ nav a {
   text-decoration: none;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: bold;
-  padding: 20px;
+  padding: 10px;
   transition: 0.2s ease color;
   clear: both;
   overflow: hidden;
@@ -63,37 +70,36 @@ nav a:hover:after {
   transform: scale(1);
 }
 
-.HomeBut{
-    clear: both;
-    display: inline-block;
-    overflow: hidden;
-    white-space: nowrap;
-    padding: 10px;
-    /* background-color: white; */
-    border-color: #0e0000;
-    color: #949494;
-    font-size: medium;
-    font-weight: bold;
+.HomeBut {
+  clear: both;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 10px;
+  /* background-color: white; */
+  border-color: #0e0000;
+  color: #949494;
+  font-size: medium;
+  font-weight: bold;
+  border-radius: 12px;
 }
 
 /* tables style */
-.tableStriped{
-border: 2px solid black;
-border-collapse: collapse;
+.tableStriped {
+  border: 2px solid black;
+  border-collapse: collapse;
 }
 
-th{
-border: 1px solid black;
-border-collapse: collapse;
-padding: 10px;
-text-align: center;
+th {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 10px;
+  text-align: center;
 }
 
-td{
-border: 1px solid black;
-border-collapse: collapse;
-padding: 10px;
-text-align: center;
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 10px;
+  text-align: center;
 }
-
-

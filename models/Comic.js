@@ -12,9 +12,9 @@ const comicSchema = mongoose.Schema({
     completed: Boolean,
     image: String
 },
-{
-    timestamps: true
-})
+    {
+        timestamps: true
+    })
 
 const Comic = mongoose.model('Comic', comicSchema)
 
