@@ -43,6 +43,30 @@ exports.comic_index_get = function (req, res) {
     })
 }
 
+exports.comic_all_get = function (req, res) {
+    // find all comics and populate the user field with user data
+    Comic.find().populate('user')
+
+    .then(function(comics) {
+        console.log('comics get then',comics)
+        // render the comic index page with the list of comics
+        res.render('comic/all', {comics}) // articles: articles
+    })
+    .catch(function(err) {
+        console.log(err)
+    })
+}
+
+exports.comic_detail_get = (req, res) => {
+    Comic.findById(req.query.id)
+    .then(comic => {
+        res.render('comic/detail', {comic})
+    })
+    .catch((err) => {
+        console.log(err)
+    })
+}
+
 /*
 // Display detail page for a specific comic
 exports.comic_show_get = function(req,res) {
