@@ -1,10 +1,12 @@
 <!-- ALL COMICS BY ALL USERS -->
 <h1>Comic</h1>
 
-<table class="table table-striped">
+<table class="tableStriped">
     <tr>
         <th>Title</th>
         <th>Author</th>
+        <th>Completed</th>
+        
     </tr>
 
 <% comics.forEach(function(comic){ %> 
@@ -13,6 +15,7 @@
         <a href="/comic/detail?id=<%= comic._id %>">
             <%= comic.title%> </a></td>
         <td><%= comic.user.name %></td>
+        <td><%= comic.completed %></td>
     </tr>
 <% }) %>
 </table>

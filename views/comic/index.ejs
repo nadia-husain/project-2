@@ -1,6 +1,6 @@
 <h1>Comic</h1>
 
-<table class="table table-striped">
+<table class="tableStriped">
     <tr>
         <th>Title</th>
         <th>Genre</th>
@@ -20,11 +20,13 @@
         <td><%= comic.datePublished %></td>
         <td><%= comic.noEpisodes %></td>
         <td><%= comic.completed %></td>
-        <td><a href="/comic/edit?id=<%= comic._id %>">Edit</a></td>
-        <td><a href="/comic/delete?id=<%= comic._id %>">Delete</a></td>
+        <td><a href="/comic/edit?id=<%= comic._id %>"><button>Edit</button></a></td>
+        <td><a href="/comic/delete?id=<%= comic._id %>"><button>Delete</button></a></td>
     </tr>
 <% }) %>
 </table>
-
+<br>
+<br>
+<br>
 <a href="add"><button>Add Comic</button></a>
 
