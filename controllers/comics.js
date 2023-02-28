@@ -10,7 +10,7 @@ exports.comic_create_get = function (req, res) {
 exports.comic_create_post = function (req, res) {
     console.log('create post body: ', req.session)
     
-    req.body.user = req.session.passport.user
+    req.body.user = req.session.passport.user //user is the one that is stored in the session
     // create a new comic with the form data
     let comic = new Comic(req.body)
   
