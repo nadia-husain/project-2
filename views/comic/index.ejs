@@ -21,14 +21,9 @@
         <td><%= comic.datePublished %></td>
         <td><%= comic.noEpisodes %></td>
         <td><%= comic.completed %></td>
-<<<<<<< HEAD
-        <td><a href="/comic/edit?id=<%= comic._id %>"><button>Edit</button></a></td>
-        <td><a href="/comic/delete?id=<%= comic._id %>"><button>Delete</button></a></td>
-=======
-        <td> <img src="uploads/<%=comic.image%>" width="250" height="220px"></td>
+        <td> <img src="/public/uploads/<%= comic.image %>" width="250" height="220px"></td>
         <td><a href="/comic/edit?id=<%= comic._id %>">Edit</a></td>
         <td><a href="/comic/delete?id=<%= comic._id %>">Delete</a></td>
->>>>>>> 8fdc619bb906a0c782de260ebd5d48108a520eac
     </tr>
 <% }) %>
 </table>
