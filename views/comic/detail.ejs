@@ -1,6 +1,10 @@
 <h1>
-    <%= comic.title %>
+    <%= comic %>
 </h1>
+
+<% if(review!==undefined){%>
+<h1><%= review %></h1>
+<% }%>
 
 <div>
 
@@ -22,13 +26,13 @@
     Completed: <%= comic.completed %>
 </div>
 
-<h1><%= user %></h1>
+<!-- <h1></%= myUserId %></h1> -->
 
 <form action="/comic/detail" method="post">
     <textarea name="review"></textarea>
     <button type="submit">Add A Review</button>
     <input type="hidden" value="<%=comic._id%>" name="comic">
-    <!-- <input type="hidden" value="</%=user._id%>" name="user"> -->
+    <input type="hidden" value="<%= myUserId %>" name="user">
 </form>
 
 <!-- DISPLAY ALL REVIEWS BELOW-->
