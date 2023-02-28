@@ -17,7 +17,9 @@
     Completed: <%= comic.completed %>
 </div>
 
-<form action="/comic/all" method="post">
+<h1><%= user %></h1>
+
+<form action="/comic/detail" method="post">
     <textarea name="review"></textarea>
     <button type="submit">Add A Review</button>
     <input type="hidden" value="<%=comic._id%>" name="comic">

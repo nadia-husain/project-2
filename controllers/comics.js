@@ -66,11 +66,11 @@ exports.comic_all_get = function (req, res) {
 exports.comic_detail_get = (req, res) => {
     Comic.findById(req.query.id)
         .then(comic => {
-            res.render('comic/detail', { comic })
+            res.render('comic/detail', {comic})
         })
         .catch((err) => {
             console.log(err)
-        })
+        })     
 }
 
 /*
@@ -131,7 +131,7 @@ exports.review_create_post = function(req, res) {
     let review = new Review (req.body)
     review.save()
       .then(function () {
-        res.redirect('/comic/all')
+        res.redirect('/comic/detail')
       })
       .catch(function (err) {
         console.log(err)
@@ -139,16 +139,13 @@ exports.review_create_post = function(req, res) {
       })
 }
 
-exports.review_detail_get = (req, res) => {
-    Review.findById(req.review._id)
-    .then(reviews => {
-        res.render('comic/detail', {reviews})
-    })
-    .catch((err) => {
-        console.log(err)
-    })
-}
-
-
-
-
+// exports.review_detail_get = (req, res) => {
+//     User.findById(req.user._id)
+//         .then(function (user) {
+//             res.render('comic/detail', { user })
+//         })
+//         .catch(function (err) {
+//             console.log(err)
+//             res.send('something went wrong, please try again later.')
+//         })
+// }
