@@ -1,13 +1,13 @@
 const mongoose = require('mongoose')
 const reviewSchema = mongoose.Schema({
-    comics: [{
+    comic: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Comic' // the Comic model
-    }],
-    user: [{
+    },
+    user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User' // the User model
-    }],
+    },
     review: String,
 },
     {

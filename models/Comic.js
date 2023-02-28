@@ -10,6 +10,10 @@ const comicSchema = mongoose.Schema({
     noEpisodes: Number,
     description: String,
     completed: Boolean,
+    reviews: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Review'
+    }],
     image: String
 },
     {
