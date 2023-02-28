@@ -95,6 +95,7 @@ th {
   border-collapse: collapse;
   padding: 10px;
   text-align: center;
+  font-size: large;
 }
 
 td {
@@ -102,4 +103,5 @@ td {
   border-collapse: collapse;
   padding: 10px;
   text-align: center;
+  font-size: medium;
 }
