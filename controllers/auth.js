@@ -9,6 +9,8 @@ exports.auth_signup_get = (req, res) => {
 }
 
 exports.auth_signin_get = (req, res) => {
+  // console.log("this is user id: ", req.session.User._id)
+   
     res.render('auth/signin')
 }
 
@@ -17,11 +19,10 @@ exports.auth_signup_post = (req, res) => {
     let hash = bcrypt.hashSync(req.body.password, 10)//number to encrypt the min num 8
     // this will change user pass to hashed one 
     user.password = hash
-
-
     //save user in the DB
     user.save()
         .then(() => {
+           // console.log('User ID:', req.user._id);
             res.redirect('/auth/signin')
         })
         .catch((err) => {

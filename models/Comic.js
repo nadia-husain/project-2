@@ -13,7 +13,8 @@ const comicSchema = mongoose.Schema({
     reviews: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Review'
-    }]
+    }],
+    image: String
 },
 {
     timestamps: true

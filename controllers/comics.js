@@ -14,11 +14,16 @@ exports.comic_create_post = function (req, res) {
     req.body.user = req.session.passport.user //user is the one that is stored in the session
     // create a new comic with the form data
     let comic = new Comic(req.body)
+
+    let imagePath = req.file.filename;
+    console.log(imagePath);
+    comic.image = imagePath;
   
     // add the logged-in user's information to the comic
     // comic.user.push(req.session.user._id)
   
     // save the comic to the database
+
     comic.save()
       .then(function () {
         res.redirect('/comic/index')
@@ -51,7 +56,7 @@ exports.comic_all_get = function (req, res) {
     .then(function(comics) {
         console.log('comics get then',comics)
         // render the comic index page with the list of comics
-        res.render('comic/all', {comics}) // articles: articles
+        res.render('comic/all', {comics}) // comics : comics
     })
     .catch(function(err) {
         console.log(err)
