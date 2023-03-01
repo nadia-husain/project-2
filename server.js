@@ -50,3 +50,8 @@ app.listen(port, function () {
 // Connect to MongoDB
 
 config.run()
+
+app.use(function(req, res, next){
+    res.locals.currentUser = req.user;
+    next();
+ })
