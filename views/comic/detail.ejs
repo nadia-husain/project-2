@@ -22,13 +22,17 @@
     Completed: <%= comic.completed %>
 </div>
 
-<h1><%= user %></h1>
+<!-- <h1></%= myUserId %></h1> -->
 
 <form action="/comic/detail" method="post">
     <textarea name="review"></textarea>
     <button type="submit">Add A Review</button>
     <input type="hidden" value="<%=comic._id%>" name="comic">
-    <!-- <input type="hidden" value="</%=user._id%>" name="user"> -->
+    <input type="hidden" value="<%= myUserId %>" name="user">
 </form>
 
 <!-- DISPLAY ALL REVIEWS BELOW-->
+
+
+<h4>Reviews</h4>
+<p> <%= review %> </p>

@@ -9,6 +9,10 @@ const UserSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Comic' // the Comic model
     }],
+    reviews: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Review' // the Comic model
+    }]
 },
     {
         timestamps: true

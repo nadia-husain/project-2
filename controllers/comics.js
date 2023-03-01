@@ -66,7 +66,11 @@ exports.comic_all_get = function (req, res) {
 exports.comic_detail_get = (req, res) => {
     Comic.findById(req.query.id)
         .then(comic => {
-            res.render('comic/detail', {comic})
+            let myUserId = req.session.passport.user
+            let review = ""
+            // console.log("zhid fdgndgif:", req.session.passport.user)
+            console.log("this is the detail get", comic)
+            res.render('comic/detail', {comic, myUserId, review})
         })
         .catch((err) => {
             console.log(err)
@@ -130,13 +134,17 @@ exports.review_create_post = function(req, res) {
     console.log(req.body)
     let review = new Review (req.body)
     review.save()
-      .then(function () {
-        res.redirect('/comic/detail')
-      })
-      .catch(function (err) {
-        console.log(err)
-        res.send('An error occurred please try again later')
-      })
+      Comic.findById(req.query.id)
+        .then(() => {
+            let myUserId = req.session.passport.user
+            let comic = req.body.comic
+            console.log('comic log', comic)
+            let review = req.body.review
+            res.render('comic/detail', {comic, myUserId, review})
+        })
+        .catch((err) => {
+            console.log(err)
+        })
 }
 
 // exports.review_detail_get = (req, res) => {
