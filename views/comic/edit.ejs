@@ -23,19 +23,20 @@
 
     <div>
         <label>Description:</label>
-        <textarea name="description" value="<%= comic.description %>"></textarea>
+        <textarea name="description" value="<%= comic.description%>"></textarea>
     </div>
 
     <div>
         <label>Completed:</label>
         <select name="completed">
             <option value="<%= comic.completed %>"></option>
+           
         </select>
 
     </div>
 
 
-    <input type="hidden" value="<%=user._id%>" name="id">
+    <input type="hidden" value="<%=myUserId%>" name="id">
     <a href="edit>"><button type="submit">Edit Comic</button></a>
 
 </form>
