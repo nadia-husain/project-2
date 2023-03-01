@@ -135,50 +135,16 @@ exports.review_create_post = function(req, res) {
     let review = new Review (req.body)
     review.save()
       Comic.findById(req.query.id)
-        .then(p => {
+        .then(() => {
             let myUserId = req.session.passport.user
             let comic = req.body.comic
+            console.log('comic log', comic)
             let review = req.body.review
-            // console.log("zhid fdgndgif:", req.session.passport.user)
-            console.log(comic)
             res.render('comic/detail', {comic, myUserId, review})
         })
         .catch((err) => {
             console.log(err)
         })
-    // res.render('/comic/detail')
-
-    // Comic.findById(req.query.id)
-    // .then(comic => {
-    //     let myUserId = req.session.passport.user
-    //     console.log('req.query.id xsdsdsd', req.query.id)
-    //     console.log('req.session.passport zxaads', req.session.passport)
-    //     console.log('req.body csdsdsd', req.body)
-    //     console.log('req.params cdsdsdfds', req.params)
-    //     // console.log("zhid fdgndgif:", req.session.passport.user)
-    //     console.log("this is the review post", comic)
-    //     res.render('comic/detail', {comic, myUserId})
-    // })
-    // .catch((err) => {
-    //     console.log(err)
-    // })
-    // req.body.user = req.session.passport.user //user is the one that is stored in the session
-    // create a new comic with the form data
-    // let comic = req.body.comic
-    // let review = new Review (req.body.review)
-    // let currentUser = req.body.user
-
-    // // save the comic to the database
-    // // comic.save()
-    // review.save()
-    //     .then(function () {
-    //         res.render('comic/detail')
-    //     })
-    //     .catch(function (err) {
-    //         console.log(err)
-    //         res.send('An error occurred please try again later')
-    //     })
-
 }
 
 // exports.review_detail_get = (req, res) => {
