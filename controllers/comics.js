@@ -67,7 +67,7 @@ exports.comic_all_get = function (req, res) {
 }
 
 exports.comic_detail_get = (req, res) => {
-    Comic.findById(req.query.id).populate('reviews')
+    Comic.findById(req.query.id).populate('reviews').populate('user')
         .then(comic => {
             let myUserId = req.session.passport.user
             let review
