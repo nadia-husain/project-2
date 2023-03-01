@@ -67,7 +67,12 @@ exports.comic_all_get = function (req, res) {
 }
 
 exports.comic_detail_get = (req, res) => {
-    Comic.findById(req.query.id).populate('reviews').populate('user')
+    Comic.findById(req.query.id).populate({
+        path: 'reviews',
+        populate: {
+            path: 'user'
+        }
+    })
         .then(comic => {
             let myUserId = req.session.passport.user
             let review
@@ -159,12 +164,17 @@ exports.review_create_post = function(req, res) {
         .then((savedReview) => {
             console.log('saved review', savedReview)
             // find the comic with the specified ID and add the review to its reviews array
-            Comic.findByIdAndUpdate(req.query.id, { $push: { reviews: savedReview._id } })
-                .then((comic) => {
-                    console.log(comic)
+            Comic.findByIdAndUpdate(req.query.id, { $push: { reviews: savedReview._id } }, {new: true}).populate({
+                path: 'reviews',
+                populate: {
+                    path: 'user'
+                }
+            }).then((comic) => {
                     let myUserId = req.session.passport.user
+                    console.log('passport to get name', req.session)
                     let review = req.body.review
-                    res.render('comic/detail', {comic, myUserId, review})
+                    console.log('comic ssas: ', comic)
+                    res.render(`comic/detail`, {comic, myUserId, review})
                 })
                 .catch((err) => {
                     console.log(err)
