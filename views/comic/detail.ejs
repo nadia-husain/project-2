@@ -41,5 +41,6 @@
 
 <h4>Reviews</h4>
 <% comic.reviews.forEach(function(review) { %>
-  <p><%= review.review %></p>
+    <!-- </%= console.log('review user:' review.user.name) %> -->
+  <p><%= review.review %> - <%= review.user.name %> </p>
 <% }); %>
