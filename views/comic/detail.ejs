@@ -1,5 +1,6 @@
 <h1>
-    <%= comic.title %>
+        <%= comic.title %>
+        <%= console.log('comic title render', comic.title) %>
 </h1>
 
 <div>
@@ -24,7 +25,8 @@
 
 <!-- <h1></%= myUserId %></h1> -->
 
-<form action="/comic/detail" method="post">
+<!-- <form action="/comic/detail" method="post"> -->
+<form action="/comic/detail?id=<%= comic._id %>" method="post">
     <textarea name="review"></textarea>
     <button type="submit">Add A Review</button>
     <input type="hidden" value="<%=comic._id%>" name="comic">
