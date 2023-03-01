@@ -1,4 +1,3 @@
-<h1>Edit Comic</h1>
 
 <form action="/comic/edit" method="POST">
 
@@ -29,14 +28,16 @@
     <div>
         <label>Completed:</label>
         <select name="completed">
-            <option value="<%= comic.completed %>"></option>
+            <option selected value="<%= comic.completed %>"><%= comic.completed %></option>
+            <option value="<%= !comic.completed%>"><%= !comic.completed%></option>
+            </option>
            
         </select>
 
     </div>
 
 
-    <input type="hidden" value="<%=myUserId%>" name="id">
-    <a href="edit>"><button type="submit">Edit Comic</button></a>
+    <input type="hidden" value="<%=comic._id%>" name="id">
+    <button type="submit">Edit Comic</button>
 
 </form>
