@@ -110,7 +110,8 @@ exports.comic_delete_get = (req, res) => {
 exports.comic_update_get = function (req, res) {
     Comic.findById(req.query.id)
         .then(function (comic) {
-            res.render('comic/edit', { comic })
+            let myUserId = req.session.passport.user
+            res.render('comic/edit', {comic, myUserId})
         })
         .catch(function (err) {
             console.log(err)
