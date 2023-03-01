@@ -4,27 +4,21 @@
         <th>Image</th>
         <th>Title</th>
         <th>Genre</th>
-        <th>Author</th>
         <th>Date Published</th>
         <th>No Episodes</th>
         <th>Description</th>
-        <th>Completed</th>
+        <th>Status</th>
         <th>Edit</th>
         <th>Delete</th>
     </tr>
-    <h1>Hello</h1>
-    <h1><%= myUserId %></h1> 
-    <h1><%= comics %></h1>
-    <% //if(myUserId===user._id) {%>
-    <% comics.forEach(function(comic){ %> 
-        <% const User = String(comic.user[0]) %>
-        <% const CurrentUser= String(currentUser._id) %>
-       <% if(User === CurrentUser) {%>
+
+
+<% comics.forEach(function(comic){ %> 
+
     <tr>
         <td> <img src="/public/uploads/<%= comic.image %>" width="250" height="220px"></td>
         <td><%= comic.title%></td>
         <td><%= comic.genre %></td>
-        <td><%= comic.user[0].name %></td>
         <td><%= comic.datePublished %></td>
         <td><%= comic.noEpisodes %></td>
         <td><%= comic.description %></td>
@@ -32,7 +26,6 @@
         <td><a href="edit?id=<%= comic._id %>"><button>Edit</button></a></td>
         <td><a href="/comic/delete?id=<%= comic._id %>"><button>Delete</button></a></td>
     </tr>
-    <% } %>
 <% }) %>
 
 </table>
