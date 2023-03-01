@@ -67,7 +67,7 @@ exports.comic_all_get = function (req, res) {
 }
 
 exports.comic_detail_get = (req, res) => {
-    Comic.findById(req.query.id).populate({
+    Comic.findById(req.query.id).populate('user').populate({
         path: 'reviews',
         populate: {
             path: 'user'
