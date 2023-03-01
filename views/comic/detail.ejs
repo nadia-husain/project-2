@@ -36,5 +36,10 @@
 <!-- DISPLAY ALL REVIEWS BELOW-->
 
 
+<!-- <h4>Reviews</h4>
+<p> </%= review %> </p> -->
+
 <h4>Reviews</h4>
-<p> <%= review %> </p>
+<% comic.reviews.forEach(function(review) { %>
+  <p><%= review.review %></p>
+<% }); %>
