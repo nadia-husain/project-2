@@ -120,9 +120,9 @@ exports.comic_update_get = function (req, res) {
 // HTTP Update POST - Comic
 
 exports.comic_update_post = function (req, res) {
-    Comic.findByIdAndUpdate(req.comic._id, req.comic)
+    Comic.findByIdAndUpdate(req.body.id, req.body)
         .then(function () {
-            console.log(req.comic)
+            console.log(req.body)
             res.redirect('/comic/index')
         })
         .catch(function (err) {
