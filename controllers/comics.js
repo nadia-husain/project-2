@@ -34,15 +34,17 @@ exports.comic_create_post = function (req, res) {
         })
 }
 
-// Display list of all comics
+// Display list of MY COMIC
 exports.comic_index_get = function (req, res) {
     // find all comics and populate the user field with user data
     Comic.find().populate('user')
 
         .then(function (comics) {
             console.log('comics get then', comics)
+            console.log(req.session.passport.user)
+            let myUserId = req.session.passport.user
             // render the comic index page with the list of comics
-            res.render('comic/index', { comics }) // articles: articles
+            res.render('comic/index', {comics, myUserId}) // articles: articles
         })
         .catch(function (err) {
             console.log(err)
