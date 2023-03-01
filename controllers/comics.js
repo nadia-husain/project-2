@@ -155,15 +155,8 @@ exports.review_create_post = function(req, res) {
     console.log(req.body)
     let review = new Review(req.body)
     review.save()
-      Comic.findById(req.query.id)
-      .then((comic) => {
-        let myUserId = req.session.passport.user
-        // let comic = req.body.comic
-        // console.log('comic log', comic)
-        // console.log('comic object hopefully not lost', p)
-            let review = req.body.review
-            res.render('comic/detail', {comic, myUserId, review})
         .then((savedReview) => {
+            console.log('saved review', savedReview)
             // find the comic with the specified ID and add the review to its reviews array
             Comic.findByIdAndUpdate(req.query.id, { $push: { reviews: savedReview._id } })
                 .then((comic) => {

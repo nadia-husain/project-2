@@ -24,7 +24,7 @@
         <td> <img src="/public/uploads/<%= comic.image %>" width="250" height="220px"></td>
         <td><%= comic.title%></td>
         <td><%= comic.genre %></td>
-        <td><%= comic.user.name %></td>
+        <td><%= comic.user[0].name %></td>
         <td><%= comic.datePublished %></td>
         <td><%= comic.noEpisodes %></td>
         <td><%= comic.description %></td>
