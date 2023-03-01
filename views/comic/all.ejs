@@ -13,7 +13,7 @@
     <tr>
         <td><img src="/public/uploads/<%= comic.image %>" width="250" height="220px"></td>
         <td><a href="/comic/detail?id=<%= comic._id %>"><%= comic.title%> </a></td>
-        <td><%= comic.user.name %></td>
+        <td><%= comic.user[0].name%></td>
         <td><%= comic.completed %></td>
         
     </tr>

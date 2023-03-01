@@ -37,7 +37,8 @@ exports.comic_create_post = function (req, res) {
 // Display list of MY COMIC
 exports.comic_index_get = function (req, res) {
     // find all comics and populate the user field with user data
-    Comic.find().populate('user')
+    let myUserId1 = req.session.passport.user
+    Comic.find({user: myUserId1}).populate('user')
 
         .then(function (comics) {
             console.log('comics get then', comics)
@@ -180,7 +181,7 @@ exports.review_create_post = function(req, res) {
             console.log(err)
         })
 }
-
+)}
 // exports.review_detail_get = (req, res) => {
 //     User.findById(req.user._id)
 //         .then(function (user) {
