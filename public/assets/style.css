@@ -70,7 +70,7 @@ nav a:hover:after {
   transform: scale(1);
 }
 
-.HomeBut {
+.SignBtns {
   clear: both;
   display: inline-block;
   overflow: hidden;
@@ -81,7 +81,7 @@ nav a:hover:after {
   color: #949494;
   font-size: medium;
   font-weight: bold;
-  border-radius: 12px;
+  border-radius: 35px;
 }
 
 /* tables style */

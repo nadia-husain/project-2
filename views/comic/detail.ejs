@@ -8,8 +8,16 @@
 </div>
 <img src="/public/uploads/<%= comic.image %>" width="250" height="220px">
 <div>
+    Author: <%= comic.user[0].name %>
+</div>
+<div>
     Genre: <%= comic.genre %>
 </div>
+
+<div>
+    Author: <%= comic.user[0].name %>
+</div>
+<% console.log('this is the comic obj', comic) %>
 <div>
     Date publish: <%= comic.datePublished%>
 </div>

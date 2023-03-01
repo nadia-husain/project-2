@@ -34,10 +34,11 @@ exports.comic_create_post = function (req, res) {
         })
 }
 
-// Display list of MY COMIC
+// Display list of MY COMICS
 exports.comic_index_get = function (req, res) {
     // find all comics and populate the user field with user data
-    Comic.find().populate('user')
+    let myUserId1 = req.session.passport.user
+    Comic.find({user: myUserId1}).populate('user')
 
         .then(function (comics) {
             console.log('comics get then', comics)
@@ -115,7 +116,7 @@ exports.comic_delete_get = (req, res) => {
 exports.comic_update_get = function (req, res) {
     Comic.findById(req.query.id)
         .then(function (comic) {
-            res.render('comic/edit', { comic })
+            res.render('comic/edit', {comic})
         })
         .catch(function (err) {
             console.log(err)
@@ -159,7 +160,8 @@ exports.comic_update_post = function (req, res) {
 exports.review_create_post = function(req, res) {
     console.log(req.body)
     let review = new Review(req.body)
-    review.save().then((savedReview) => {
+    review.save()
+        .then((savedReview) => {
             console.log('saved review', savedReview)
             // find the comic with the specified ID and add the review to its reviews array
             Comic.findByIdAndUpdate(req.query.id, { $push: { reviews: savedReview._id } }, {new: true}).populate({
