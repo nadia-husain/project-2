@@ -70,7 +70,7 @@ nav a:hover:after {
   transform: scale(1);
 }
 
-.HomeBut {
+.SignBtns {
   clear: both;
   display: inline-block;
   overflow: hidden;
