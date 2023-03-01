@@ -38,8 +38,8 @@ exports.profile_update_post = function (req, res) {
 //change password - GET
 exports.profile_changePass_get = (req, res) => {
     Profile.findById(req.user._id)
-        .then(users => {
-            res.render('profile/edit', { users })
+        .then(user=> {
+            res.render('profile/changePass', { user })
         })
         .catch(err => {
             console.log(err)
@@ -48,10 +48,10 @@ exports.profile_changePass_get = (req, res) => {
 
 //change password - Post
 exports.profile_changePass_post = (req, res) => {
-    const hashedPass = bcrypt.hashSync(req.body.Password, 8)
-    Profile.findByIdAndUpdate(req.body.UserId, { password: hashedPass })
+    const hashedPass = bcrypt.hashSync(req.body.password, 8)
+    Profile.findByIdAndUpdate(req.body.id, { password: hashedPass })
         .then(() => {
-            res.redirect('/profile/edit')
+            res.redirect('/profile/index')
         })
         .catch(err => {
             console.log(err)
