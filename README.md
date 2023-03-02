@@ -2,7 +2,8 @@
 
 ## Introduction
 ---
-intro here
+
+A website that allows the user to add, view, edit, and delete details about a comic to build a comic database. 
 
 ## ERD
 ---
@@ -12,7 +13,7 @@ intro here
 ## Wireframes
 ---
 
-wireframes here
+![Homepage](https://i.imgur.com/93nhjOw.png)
 
 ## Trello Board
 ---
