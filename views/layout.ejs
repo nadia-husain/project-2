@@ -6,24 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/public/assets/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Comics Website</title>
 </head>
 
 <body>
     <nav>
-        <a href="/">Home</a>
-        <a href="/comic/all">All Comics</a>
-        <a href="/comic/index">My Comics</a>
-        <a href="/profile/index">Profile</a>
-        <a href="/auth/signin"><button class="SignBtns">Log In</button></a>
-        <a href="/auth/signup"><button class="SignBtns">Sign Up</button></a>
-
-    </nav>
-    <hr>
+        <!-- <div class="links"> -->
+            <a href="/">Home</a>
+            <a href="/comic/all">All Comics</a>
+            <a href="/comic/index">My Comics</a>
+            <a href="/profile/index">Profile</a>
+            
+   
+    <a href="/auth/signin" class="in"><button class="SignBtns In">Log In</button></a>
+    <a href="/auth/signup" class="up"><button class="SignBtns Up">Sign Up</button></a>
+</nav>
     <%- body %>
         <br>
-        <hr>
+        
         <!-- Footer Layout Page -->
+        <br>
+    
 </body>
 
 </html>

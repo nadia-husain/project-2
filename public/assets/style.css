@@ -1,36 +1,39 @@
+
 body{
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    margin: 0;
 }
 
-div{
-padding-bottom: 10px;
-font-size: large;
-}
 nav {
-  width: 319px;
-  display: table;
-  margin: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 70px;
+  font-size: 20px;
+  margin-top: -1px;
+  padding-top: 18px;
+  padding-left: 30px;
+  background-color: white;
 }
 
 nav a {
-  position: relative;
-  display: table-cell;
-  text-align: center;
-  color: #949494;
+  color: #480CA8;
   text-decoration: none;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Nunito;
   font-weight: bold;
+  /* font-size: 20px; */
   padding: 10px;
   transition: 0.2s ease color;
-  clear: both;
-  overflow: hidden;
-  white-space: nowrap;
 }
 
 nav a:before,
 nav a:after {
   content: "";
-  position: absolute;
+  /* position: absolute; */
   border-radius: 50%;
   transform: scale(0);
   transition: 0.2s ease transform;
@@ -62,7 +65,7 @@ nav a:after {
 }
 
 nav a:hover {
-  color: #0e0000;
+  color: #F72585;
 }
 
 nav a:hover:before,
@@ -71,27 +74,66 @@ nav a:hover:after {
 }
 
 .SignBtns {
-  clear: both;
-  display: inline-block;
-  overflow: hidden;
-  white-space: nowrap;
-  padding: 10px;
-  /* background-color: white; */
-  border-color: #0e0000;
-  color: #949494;
+  padding: 5x;
   font-size: medium;
   font-weight: bold;
-  border-radius: 35px;
+  border-radius: 30px;
+  width: 120px;
+  height: 45px;
+}
+
+.SignBtns.In {
+  background-color: white;
+  color: #480CA8;
+  border: 3px solid #480CA8;
+  box-shadow: 2px 2px 2px rgba(0, 54, 0, 0.255);
+  margin-left: 520px;
+}
+
+.SignBtns.In:hover {
+  transition-duration: 0.3s;
+  background-color: white;
+  border-color: #F72585;
+  color: #F72585;
+}
+
+.SignBtns.In:active {
+  background-color: #F72585;
+  transform: translateY(3px);
+}
+
+.SignBtns.Up {
+  background-color: #480CA8;
+  color: white;
+  border: 3px solid #480CA8;
+  box-shadow: 2px 2px 2px rgba(0, 54, 0, 0.255);
+  /* margin-left: 450px; */
+  float: right;
+  margin-right: 50px;
+}
+
+.SignBtns.Up:hover {
+  transition-duration: 0.3s;
+  background-color: #F72585;
+  border-color: #F72585;
+  color: white;
+}
+
+.SignBtns.Up:active {
+  background-color: #F72585;
+  transform: translateY(3px);
 }
 
 /* tables style */
 .tableStriped {
-  border: 2px solid black;
+  border: 2px solid #480CA8;
   border-collapse: collapse;
+  text-align: center;
+  margin: auto
 }
 
 th {
-  border: 1px solid black;
+  border: 1px solid #480CA8;
   border-collapse: collapse;
   padding: 10px;
   text-align: center;
@@ -99,9 +141,78 @@ th {
 }
 
 td {
-  border: 1px solid black;
+  border: 1px solid #480CA8;
   border-collapse: collapse;
   padding: 10px;
   text-align: center;
   font-size: medium;
+}
+
+footer {
+  height: 100px;
+  background-color: #2B2D2E;
+  color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.mainpic {
+  margin-top: 20px;;
+  background-position: top;
+  background: linear-gradient(0deg, rgba(4, 4, 4, 0.6), rgba(4,4,4,0.6)), url("/public//uploads/image_1677721074989.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 520px;
+  width: 100%;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.readbtn {
+  color: white;
+    background-color: #F72585;
+    border-bottom:  2px;
+    border-radius: 30px;
+    border: 0;
+    padding: 8px;
+    font-size: 17px;
+    font-weight: bold;
+    font-family: Nunito;
+    width: 200px;
+    margin-top: 10px;
+}
+
+.readbtn:hover {
+  transition-duration: 0.3s;
+  background-color: #4CC9F0;
+}
+
+.readbtn:active {
+  background-color: #4CC9F0;
+  transform: translateY(3px);
+}
+
+p {
+  font-weight: bold; 
+  font-size: 25px; 
+  margin-top: -50px;
+  text-align: center;
+}
+
+.sections {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.third {
+  height: 650px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

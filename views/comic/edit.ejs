@@ -1,8 +1,8 @@
-
-<form action="/comic/edit" method="POST">
+<link href="/public/assets/forms.css" rel="stylesheet">
+<form action="/comic/edit" method="POST" class="edit">
 
     <div>
-        <label>title: </label>
+        <label>Title: </label>
         <input name="title" type="text" value="<%= comic.title %>" />
     </div>
     <div>
@@ -38,6 +38,6 @@
 
 
     <input type="hidden" value="<%=comic._id%>" name="id">
-   <button type="submit">Edit Comic</button>
+   <button type="submit" style="color: white; background-color: #480CA8; border: 0; border-radius: 20px; width: 100px;">Edit Comic</button>
 
 </form>

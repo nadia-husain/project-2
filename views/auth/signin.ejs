@@ -1,21 +1,21 @@
-<h1> Log In </h1>
+<link href="/public/assets/forms.css" rel="stylesheet">
 
-<form method="POST" action="/auth/signin">
-
+<form method="POST" action="/auth/signin" class="login">
+    <h1 style="text-align: center; font-size: 25px;"> Log In </h1>
     <div class="form-group">
-        <label>Email Address</label>
+        <label style="float: left;">Email Address</label>
         <input type="email" name="emailAddress" class="form-control" />
     </div>
 
     <div class="form-group">
-        <label>Password</label>
+        <label style="float: left;">Password</label>
         <input type="password" name="password" class="form-control" />
     </div>
 
     <br>
 
     <div>
-        <button type="submit" class="btn btn-primary">Sign In</button>
+        <button type="submit" class="btn btn-primary" style="margin-left: 50px; border-radius: 30px; width: 100px;">Sign In</button>
     </div>
 
 </form>
