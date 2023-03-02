@@ -1,0 +1,112 @@
+body {
+    background-color: #480ca82e;
+    font-family: Nunito;
+    width: 100%;
+    margin: 0;
+}
+
+.login {
+    border: 2px solid #4a0eab4d;
+    border-radius: 20px;
+    width: 30%;
+    height: 400px;
+      margin: auto;
+      margin-top: 80px;
+      height: 330px;
+      padding: 10px;
+      background-color: white;
+      text-align: center;
+  }
+
+.signup {
+    border: 2px solid #4a0eab4d;
+    border-radius: 20px;
+    width: 30%;
+    height: 400px;
+      margin: auto;
+      margin-top: 80px;
+      padding: 10px;
+      background-color: white;
+      text-align: center;
+  }
+
+  .btn.btn-primary {
+    background-color: #480CA8;
+    color: white;
+    border: 3px solid #480CA8;
+    box-shadow: 2px 2px 2px rgba(0, 54, 0, 0.255);
+    text-align: center;
+    margin-right: 50px;
+  }
+
+.profile {
+    border: 2px solid #4a0eab4d;
+    border-radius: 20px;
+    width: 30%;
+    height: 250px;
+      margin: auto;
+      margin-top: 40px;
+      padding: 10px;
+      background-color: white;
+      text-align: center;
+}
+
+.edit {
+    border: 2px solid #4a0eab4d;
+    border-radius: 20px;
+    width: 30%;
+    height: 220px;
+      margin: auto;
+      margin-top: 40px;
+      padding: 10px;
+      background-color: white;
+      text-align: center;
+}
+
+.add {
+    border: 2px solid #4a0eab4d;
+    border-radius: 20px;
+    width: 30%;
+    height: 300px;
+      margin: auto;
+      margin-top: 40px;
+      padding: 10px;
+      background-color: white;
+      text-align: center;
+}
+
+.detail {
+    border: 2px solid #4a0eab4d;
+    border-radius: 20px;
+    width: 30%;
+    height: 600px;
+      margin: auto;
+      margin-top: 40px;
+      padding: 10px;
+      background-color: white;
+      text-align: center;
+}
+
+.editpro {
+    border: 2px solid #4a0eab4d;
+    border-radius: 20px;
+    width: 30%;
+    height: 110px;
+      margin: auto;
+      margin-top: 40px;
+      padding: 10px;
+      background-color: white;
+      text-align: center;
+}
+
+.change {
+    border: 2px solid #4a0eab4d;
+    border-radius: 20px;
+    width: 30%;
+    height: 80px;
+      margin: auto;
+      margin-top: 40px;
+      padding: 10px;
+      background-color: white;
+      text-align: center;
+}

@@ -1,0 +1,15 @@
+<link href="/public/assets/forms.css" rel="stylesheet">
+<h1 style="text-align: center;">Change Password</h1>
+
+<form action="/profile/changePass" method="POST" class="change">
+
+    <div>
+        <label>Password: </label>
+        <input name="password" type="password"  />
+    </div>
+
+
+    <input type="hidden" value="<%=user._id%>" name="id">
+    <button type="submit">Change Password</button>
+
+</form>

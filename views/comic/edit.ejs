@@ -1,0 +1,43 @@
+<link href="/public/assets/forms.css" rel="stylesheet">
+<form action="/comic/edit" method="POST" class="edit">
+
+    <div>
+        <label>Title: </label>
+        <input name="title" type="text" value="<%= comic.title %>" />
+    </div>
+    <div>
+        <label>Genre: </label>
+        <input name="genre " type="text" value="<%= comic.genre %>" />
+    </div>
+
+    <div>
+        <label>Date Published:</label>
+        <input name="datePublished" type="date" value="<%= comic.datePublished%>" />
+    </div>
+
+    <div>
+        <label>No Episodes :</label>
+        <input name="noEpisodes" type="number" value="<%= comic.noEpisodes %>" />
+    </div>
+
+    <div>
+        <label>Description:</label>
+        <input name="description" value="<%= comic.description%>"></input>
+    </div>
+
+    <div>
+        <label>Completed:</label>
+        <select name="completed">
+            <option selected value="<%= comic.completed %>"><%= comic.completed %></option>
+            <option value="<%= !comic.completed%>"><%= !comic.completed%></option>
+            </option>
+           
+        </select>
+
+    </div>
+
+
+    <input type="hidden" value="<%=comic._id%>" name="id">
+   <button type="submit" style="color: white; background-color: #480CA8; border: 0; border-radius: 20px; width: 100px;">Edit Comic</button>
+
+</form>

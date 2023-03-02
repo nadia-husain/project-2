@@ -1,0 +1,55 @@
+<link href="/public/assets/forms.css" rel="stylesheet">
+<div class="detail">
+<h1>
+        <%= comic.title %>
+        <%= console.log('comic title render', comic.title) %>
+</h1>
+
+<div>
+
+</div>
+<img src="/public/uploads/<%= comic.image %>" width="250" height="220px">
+<div>
+    Author: <%= comic.user[0].name %>
+</div>
+<div>
+    Genre: <%= comic.genre %>
+</div>
+
+<div>
+    Date publish: <%= comic.datePublished%>
+</div>
+<div>
+    No Episodes: <%= comic.noEpisodes %>
+</div>
+<div>
+    Description: <%= comic.description %>
+</div>
+<div>
+    Completed: <%= comic.completed %>
+</div>
+<br>
+
+<!-- <h1></%= myUserId %></h1> -->
+
+<!-- <form action="/comic/detail" method="post"> -->
+<form action="/comic/detail?id=<%= comic._id %>" method="post">
+    <textarea name="review"></textarea>
+<br>
+    <button type="submit">Add A Review</button>
+    <input type="hidden" value="<%=comic._id%>" name="comic">
+    <input type="hidden" value="<%= myUserId %>" name="user">
+</form>
+
+<!-- DISPLAY ALL REVIEWS BELOW-->
+
+
+<!-- <h4>Reviews</h4>
+<p> </%= review %> </p> -->
+
+<h4>Reviews</h4>
+<% comic.reviews.forEach(function(review) { %>
+    <!-- </%= console.log('review user:' review.user.name) %> -->
+  <h5><%= review.review %> - <%= review.user.name %> </h5>
+<% }); %>
+</div>

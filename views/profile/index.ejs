@@ -1,0 +1,18 @@
+<link href="/public/assets/forms.css" rel="stylesheet">
+<h1 style="text-align: center; font-size: 25px;">Profile</h1>
+<div class="profile">
+<div style="font-size: 20px;">
+    <label>Name: </label>
+    <%= user.name %>
+</div>
+
+<div style="margin-bottom: 10px; font-size: 20px;">
+    <label>Email Address: </label>
+    <%= user.emailAddress %>
+</div>
+
+
+<a href="edit"><button class="btn btn-primary" style="margin-bottom: 10px; margin-left: 50px; border-radius: 30px; width: 100px;">Edit</button></a>
+<a href="/auth/signout" ><button class="btn btn-primary" style="margin-bottom: 10px; margin-left: 50px; border-radius: 30px; width: 100px;">Sign Out</button></a>
+<a href="changePass"><button class="btn btn-primary" style="margin-bottom: 10px; margin-left: 50px; border-radius: 30px; width: 150px;">Change Password</button></a>
+</div>

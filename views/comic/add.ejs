@@ -1,0 +1,45 @@
+<link href="/public/assets/forms.css" rel="stylesheet">
+
+<h1 style="text-align: center;">Add New Comic</h1>
+<form action="/comic/add" method="post" enctype="multipart/form-data" class="add">
+    <div>
+        <label>Title</label>
+        <input name="title" type="text" />
+    </div>
+
+    <div>
+        <label>Genre</label>
+        <input name="genre" type="text" />
+    </div>
+
+    <div>
+        <label>Date Published</label>
+        <input name="datePublished" type="date">
+    </div>
+
+    <div>
+        <label>Number Of Episodes</label>
+        <input name="noEpisodes" type="number" />
+    </div>
+
+    <div>
+        <label>Description</label>
+        <textarea name="description"></textarea>
+    </div>
+
+    <div>
+        <label>Status</label>
+        <select name="completed">
+            <option value="true">completed</option>
+            <option value="false">ongoing</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="img">Select image:</label>
+        <input type="file" id="file" name="image">
+    </div>
+
+    <input type="submit" name="Add">
+
+</form>
