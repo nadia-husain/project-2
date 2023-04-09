@@ -14,17 +14,22 @@
 </head>
 
 <body>
-    <nav>
-        <!-- <div class="links"> -->
-            <a href="/">Home</a>
-            <a href="/comic/all">All Comics</a>
-            <a href="/comic/index">My Comics</a>
-            <a href="/profile/index">Profile</a>
-            
-   
-    <a href="/auth/signin" class="in"><button class="SignBtns In">Log In</button></a>
-    <a href="/auth/signup" class="up"><button class="SignBtns Up">Sign Up</button></a>
-</nav>
+    <nav class="navbar navbar-inverse" style="background-color:white; border:0">
+        <div class="container-fluid">
+          <ul class="nav navbar-nav">
+            <li><a href="/" style="color: #480CA8;">Home</a></li>
+            <li><a href="/comic/all" style="color: #480CA8;">All Comics</a></li>
+            <li><a href="/comic/index" style="color: #480CA8;">My Comics</a></li>
+            <li><a href="/profile/index" style="color: #480CA8;">Profile</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/auth/signin" class="in"><button class="SignBtns In">Log In</button></a></li>
+            <li><a href="/auth/signup" class="up"><button class="SignBtns Up">Sign Up</button></a></li>
+          </ul>
+        </div>
+    </nav>
+        
+    
     <%- body %>
         <br>
         
